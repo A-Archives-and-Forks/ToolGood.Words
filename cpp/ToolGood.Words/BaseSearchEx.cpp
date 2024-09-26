@@ -55,12 +55,12 @@ protected:
 		for (size_t i = 0; i < _keywords.size(); i++)
 		{
 			string p = _keywords[i];
-			wstring	wcs = s2ws(p);/// to_wide_string 这个有问题
+			wstring	wcs = s2ws(p);
 
 			TrieNode nd = root;
-			for (size_t j = 0; j < wcs.size(); j++)   //  这个 p.length() 对中文有问题
+			for (size_t j = 0; j < wcs.size(); j++)   
 			{
-				nd = nd.Add(wcs[j]);   // 返回是byte 不是char
+				nd = nd.Add(wcs[j]);  
 				if (nd.Layer == 0) {
 					nd.Layer = j + 1;
 					if (nd.Layer <allNodeLayers.size())
